@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theater Booking Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        background-color: #f7f7f7;
+    }
+    form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form-group input[type="radio"] {
+        width: auto;
+        margin-right: 10px;
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+    .buttons button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .buttons .submit-btn {
+        background-color: #4CAF50;
+        color: #fff;
+    }
+    .buttons .reset-btn {
+        background-color: #f44336;
+        color: #fff;
+    }
+    .notice {
+        color: #ff9800;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .success-message {
+        color: #4CAF50;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Theater Ticket Booking Form</h2>
+<form id="bookingForm">
+    <!-- User Information -->
+    <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890">
+    </div>
+
+    <!-- Event Selection -->
+    <div class="form-group">
+        <label for="play">Select Play:</label>
+        <select id="play" name="play" required>
+            <option value="">-- Choose a Play --</option>
+            <option value="play1">Hamlet</option>
+            <option value="play2">Romeo and Juliet</option>
+            <option value="play3">Macbeth</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="date">Select Date and Time:</label>
+        <input type="datetime-local" id="date" name="date" required>
+    </div>
+    <div class="form-group">
+        <label for="tickets">Number of Tickets:</label>
+        <select id="tickets" name="tickets" required>
+            <option value="">-- Select Quantity --</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    </div>
+
+    <!-- Seating Options -->
+    <div class="form-group">
+        <label>Seating Category:</label>
+        <input type="radio" id="vip" name="seating" value="VIP" required>
+        <label for="vip">VIP</label>
+        <input type="radio" id="balcony" name="seating" value="Balcony">
+        <label for="balcony">Balcony</label>
+        <input type="radio" id="regular" name="seating" value="Regular">
+        <label for="regular">Regular</label>
+    </div>
+
+    <!-- Booking Summary and Notice -->
+    <div class="notice">
+        * Note: This is a simulated payment process. No real payment will be processed.
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <button type="submit" class="submit-btn">Book Now</button>
+        <button type="reset" class="reset-btn">Reset</button>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage"></div>
+</form>
+
+<script>
+    // JavaScript for form submission
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('successMessage').textContent = 'Booking Successful! A confirmation email will be sent shortly.';
+    });
+</script>
+
+</body>
+</html>
