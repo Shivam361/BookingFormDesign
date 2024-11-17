@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theater Booking Form</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Theater Ticket Booking</h2>
+    <form id="bookingForm">
+        <!-- Step 1: Play and Date Selection -->
+        <div id="step1">
+            <h3>Select Play and Date</h3>
+            <div class="form-group">
+                <label for="play">Choose a Play:</label>
+                <select id="play" name="play" required>
+                    <option value="">-- Select Play --</option>
+                    <option value="hamlet">Hamlet</option>
+                    <option value="romeo">Romeo and Juliet</option>
+                    <option value="macbeth">Macbeth</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Select Date and Time:</label>
+                <input type="datetime-local" id="date" name="date" required>
+            </div>
+            <button type="button" onclick="nextStep()">Next</button>
+        </div>
+
+        <!-- Step 2: Interactive Seat Selection -->
+        <div id="step2" style="display: none;">
+            <h3>Select Your Seats</h3>
+            <div id="seatMap"></div>
+            <p id="selectedSeats">Selected Seats: None</p>
+            <p id="totalPrice">Total Price: $0</p>
+            <button type="button" onclick="prevStep()">Back</button>
+            <button type="button" onclick="nextStep()">Next</button>
+        </div>
+
+        <!-- Step 3: User Details -->
+        <div id="step3" style="display: none;">
+            <h3>Enter Your Details</h3>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" required>
+            </div>
+            <button type="button" onclick="prevStep()">Back</button>
+            <button type="submit">Confirm Booking</button>
+        </div>
+
+        <!-- Confirmation Message -->
+        <div id="confirmationMessage" style="display: none;">
+            <h3>Booking Confirmed!</h3>
+            <p>Your booking has been successfully submitted. A confirmation email will be sent shortly.</p>
+            <button type="button" onclick="resetForm()">New Booking</button>
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

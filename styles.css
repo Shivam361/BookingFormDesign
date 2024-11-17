@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+.container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+#seatMap {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.seat {
+    padding: 10px;
+    background-color: #ccc;
+    border: 1px solid #666;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+.seat.selected {
+    background-color: #4caf50;
+    color: #fff;
+}
+.seat.occupied {
+    background-color: #f44336;
+    color: #fff;
+    cursor: not-allowed;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
