@@ -20,11 +20,19 @@ body {
 }
 .seat {
     padding: 10px;
-    background-color: #ccc;
     border: 1px solid #666;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+}
+.seat.vip {
+    background-color: #ffcc00;
+}
+.seat.balcony {
+    background-color: #66b3ff;
+}
+.seat.regular {
+    background-color: #ccc;
 }
 .seat.selected {
     background-color: #4caf50;
